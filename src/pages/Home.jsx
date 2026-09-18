@@ -23,7 +23,7 @@ export default function Home() {
   useDocumentSEO({
     title: lang === 'mr'
       ? "कस्टम प्रिंटिंग व फोटो गिफ्ट्स कोपरगाव | SP Impression Hub"
-      : "Custom Printing & Photo Gifts in Kopargaon | SP Impression Hub",
+      : "Custom Printing & Photo Gifts Kopargaon | SP Impression Hub",
     description: lang === 'mr'
       ? "कोपरगावमधील SP Impression Hub: कस्टम प्रिंटिंग, फोटो गिफ्ट्स, मग, कीचेन्स, टी-शर्ट्स आणि CSC सेवा."
       : "Custom printing, photo gifts, mugs, acrylic keychains, DTF T-shirts and CSC services in Kopargaon from SP Impression Hub.",
