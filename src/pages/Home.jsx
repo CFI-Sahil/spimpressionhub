@@ -22,53 +22,13 @@ export default function Home() {
 
   useDocumentSEO({
     title: lang === 'mr'
-      ? "कस्टम प्रिंटिंग, फोटो गिफ्ट्स व CSC सेवा कोपरगाव | SP Impression Hub"
-      : "Custom Printing, Photo Gifts & CSC Services Kopargaon | SP Impression Hub",
+      ? "कस्टम प्रिंटिंग व फोटो गिफ्ट्स कोपरगाव | SP Impression Hub"
+      : "Custom Printing & Photo Gifts in Kopargaon | SP Impression Hub",
     description: lang === 'mr'
-      ? "कोपरगावमधील दर्जेदार प्रिंटिंग स्टुडिओ आणि कृपा ऑनलाइन अधिकृत CSC केंद्र. सानुकूल बॅजेस (₹१५ पासून), फोटो मग, ॲक्रेलिक कीचेन्स, टी-शर्ट्स आणि शासकीय सेवा."
-      : "Kopargaon's premier print workshop & Kripa Online CSC centre. Custom pin badges (from ₹15), ceramic photo mugs, acrylic keychains, DTF t-shirts & government documentation.",
+      ? "कोपरगावमधील SP Impression Hub: कस्टम प्रिंटिंग, फोटो गिफ्ट्स, मग, कीचेन्स, टी-शर्ट्स आणि CSC सेवा."
+      : "Custom printing, photo gifts, mugs, acrylic keychains, DTF T-shirts and CSC services in Kopargaon from SP Impression Hub.",
     canonical: "https://spimpressionhub.com/",
     ogImage: "https://spimpressionhub.com/images/badges.webp",
-    schemas: [
-      {
-        "@type": "FAQPage",
-        "@id": "https://spimpressionhub.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Where is SP Impression Hub located in Kopargaon?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "SP Impression Hub is located at Sanjay Nagar Chowk, Opposite Gautam Bank, Dharangaon Road, Kopargaon, Maharashtra 423601."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the minimum order quantity for custom badges and photo gifts?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There is no minimum order quantity. You can order single pieces (starts at ₹15 for badges, ₹99 for keychains, ₹199 for mugs) as well as bulk quantities for weddings, schools, and elections."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What government online services are provided by Kripa Online CSC Center?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Kripa Online provides PAN card application & correction, 7/12 & 8-A land record extracts, E-Shram card, Digital Life Certificates, Ration card updates, and MahaDBT scholarships."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How fast is order delivery and turnaround in Kopargaon?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most personalized gift orders and custom badges are ready for same-day or 24–48 hour pickup directly at the Kopargaon workshop."
-            }
-          }
-        ]
-      }
-    ]
   });
 
   return (

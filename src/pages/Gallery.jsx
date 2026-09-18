@@ -107,11 +107,11 @@ export default function Gallery() {
 
   useDocumentSEO({
     title: lang === 'mr'
-      ? "कस्टम बॅजेस, गिफ्ट्स व प्रिंटिंग कामे गॅलरी | SP Impression Hub"
-      : "Custom Badges, Gifts & Printing Work Gallery | SP Impression Hub",
+      ? "फोटो गिफ्ट्स व प्रिंटिंग गॅलरी | SP Impression Hub"
+      : "Photo Gifts & Printing Gallery | SP Impression Hub",
     description: lang === 'mr'
-      ? "कोपरगाव वर्कशॉपमधील प्रत्यक्ष उत्पादनांचे फोटो: सानुकूल पिन बॅजेस, ॲक्रेलिक कीचेन्स, सिरॅमिक फोटो मग, ओळखपत्रे आणि व्यावसायिक प्रिंटिंगचे नमुने."
-      : "Explore real completed printing work in Kopargaon: 44mm & 58mm custom button badges, double-sided acrylic keychains, photo mugs, PVC cards, and stationery.",
+      ? "SP Impression Hub चे कस्टम फोटो गिफ्ट्स, प्रिंटिंग उत्पादने आणि वैयक्तिक निर्मिती पहा."
+      : "Explore SP Impression Hub's custom photo gifts, printing products and personalized creations made for events and everyday needs.",
     canonical: "https://spimpressionhub.com/gallery",
     ogImage: "https://spimpressionhub.com/images/keychain.webp",
     schemas: [

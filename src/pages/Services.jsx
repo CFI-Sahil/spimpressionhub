@@ -16,11 +16,11 @@ export default function Services() {
 
   useDocumentSEO({
     title: lang === 'mr'
-      ? "प्रिंटिंग, गिफ्ट्स व CSC सेवा दर सूची कोपरगाव | SP Impression Hub"
-      : "Printing & CSC Services Price List in Kopargaon | SP Impression Hub",
+      ? "प्रिंटिंग व CSC सेवा कोपरगाव | SP Impression Hub"
+      : "Printing & CSC Services in Kopargaon | SP Impression Hub",
     description: lang === 'mr'
-      ? "कोपरगावमधील संपूर्ण दर यादी व सेवा: कस्टम बॅजेस (₹१५ पासून), फोटो मग, ॲक्रेलिक कीचेन्स, DTF टी-शर्ट्स, पीव्हीसी कार्ड्स आणि कृपा ऑनलाइन शासकीय फॉर्म्स."
-      : "Full price catalogue & service menu in Kopargaon: Custom pin badges from ₹15, photo mugs ₹199, acrylic keychains, DTF tees, PVC cards, and Kripa CSC online forms.",
+      ? "कोपरगावमधील कस्टम प्रिंटिंग, पर्सनलाइज्ड गिफ्ट्स, डिजिटल प्रिंटिंग आणि कृपा ऑनलाइन CSC सेवा."
+      : "Explore custom printing, personalized gifts, digital printing and Kripa Online CSC services available in Kopargaon.",
     canonical: "https://spimpressionhub.com/services",
     ogImage: "https://spimpressionhub.com/images/mug.webp",
     schemas: [

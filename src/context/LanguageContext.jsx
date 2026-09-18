@@ -16,7 +16,7 @@ export function LanguageProvider({ children }) {
   useEffect(() => {
     try {
       localStorage.setItem('sp_lang', lang);
-      document.documentElement.lang = lang;
+      document.documentElement.lang = lang === 'mr' ? 'mr-IN' : 'en-IN';
       if (lang === 'mr') {
         document.documentElement.classList.add('lang-mr');
       } else {
