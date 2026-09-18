@@ -5,13 +5,6 @@ let lenisInstance = null;
 export function initSmoothScroll() {
   if (typeof window === 'undefined') return null;
   
-  // PERFORMANCE OPTIMIZATION: 
-  // Disable heavy JavaScript smooth scrolling on mobile devices to save CPU.
-  // Mobile devices already have native, hardware-accelerated smooth scrolling.
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    return null;
-  }
-  
   if (!lenisInstance) {
     lenisInstance = new Lenis({
       duration: 1.2,
