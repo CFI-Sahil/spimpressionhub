@@ -1,0 +1,633 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #18181b;
+  --color-primary-container: #27272a;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #e4e4e7;
+  --color-inverse-primary: #d4d4d8;
+
+  --color-secondary: #c84b1f;
+  --color-secondary-container: #e05a2b;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #592200;
+  --color-secondary-fixed: #ffdbcb;
+  --color-secondary-fixed-dim: #ffb691;
+  --color-on-secondary-fixed: #341100;
+  --color-on-secondary-fixed-variant: #793100;
+
+  --color-tertiary: #27272a;
+  --color-tertiary-container: #18181b;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #a1a1aa;
+
+  --color-background: #faf8f5;
+  --color-surface: #faf8f5;
+  --color-surface-dim: #f0ede8;
+  --color-surface-bright: #faf8f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f1ea;
+  --color-surface-container: #eeeae2;
+  --color-surface-container-high: #e7e2d8;
+  --color-surface-container-highest: #dfd9ce;
+  --color-surface-variant: #eae5dc;
+
+  --color-on-surface: #1c1b1b;
+  --color-on-surface-variant: #525252;
+  --color-inverse-surface: #262626;
+  --color-inverse-on-surface: #f5f5f5;
+
+  --color-outline: #71717a;
+  --color-outline-variant: #e4e4e7;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Manrope", system-ui, sans-serif;
+  --font-devanagari: "Noto Sans Devanagari", "Plus Jakarta Sans", sans-serif;
+}
+
+/* Remove default browser focus outlines globally as requested */
+*:focus, *:focus-visible {
+  outline: none !important;
+}
+
+/* Controlled Softness - Human Designed System */
+:root {
+  --radius-btn: 6px;
+  --radius-card: 8px;
+  --radius-modal: 10px;
+}
+
+/* Custom Typography Helpers */
+.font-headline-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+.font-headline-md {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.font-headline-sm {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.font-display-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.font-body-lg {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.font-body-md {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.font-body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.font-label-lg {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.font-label-md {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.font-label-caps {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.font-devanagari {
+  font-family: var(--font-devanagari);
+  line-height: 1.45 !important;
+}
+
+/* Material Symbols Icon helper */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', 'Material Icons' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.fill-icon,
+[data-weight="fill"] {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Infinite Marquee Animation for Product Strip */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 45s linear infinite;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Print Crop Marks for Job Proof Frame */
+.crop-container {
+  position: relative;
+}
+
+.crop-tl,
+.crop-tr,
+.crop-bl,
+.crop-br {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.crop-tl {
+  top: -8px;
+  left: -8px;
+  border-top: 1.5px solid #a1a1aa;
+  border-left: 1.5px solid #a1a1aa;
+}
+
+.crop-tr {
+  top: -8px;
+  right: -8px;
+  border-top: 1.5px solid #a1a1aa;
+  border-right: 1.5px solid #a1a1aa;
+}
+
+.crop-bl {
+  bottom: -8px;
+  left: -8px;
+  border-bottom: 1.5px solid #a1a1aa;
+  border-left: 1.5px solid #a1a1aa;
+}
+
+.crop-br {
+  bottom: -8px;
+  right: -8px;
+  border-bottom: 1.5px solid #a1a1aa;
+  border-right: 1.5px solid #a1a1aa;
+}
+
+/* Subtle smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f1ea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Seamless mobile horizontal scroll fade mask without overlay boxes */
+.mobile-fade-mask {
+  mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .mobile-fade-mask {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+  }
+}
+
+/* ==================================================
+   LIQUID GLASS CARDS — Matched to reference image
+   Milky glass · crisp white rim · soft floating shadow
+   ================================================== */
+.frosted-glass-card {
+  position: relative;
+
+  /* Milky glass with very soft ambient tint — like light through frosted pane */
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(210, 235, 230, 0.28) 45%,
+      rgba(255, 255, 255, 0.58) 100%);
+
+  -webkit-backdrop-filter: blur(36px) saturate(150%) brightness(1.06);
+  backdrop-filter: blur(36px) saturate(150%) brightness(1.06);
+
+  /* Crisp white rim — dominant on top & left, fade on bottom & right */
+  border-top: 2px solid rgba(255, 255, 255, 0.96);
+  border-left: 2px solid rgba(255, 255, 255, 0.88);
+  border-right: 1px solid rgba(255, 255, 255, 0.42);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+
+  border-radius: 24px;
+
+  box-shadow:
+    /* inner top-edge specular gleam — the defining feature */
+    inset 0 2.5px 5px 0 rgba(255, 255, 255, 0.92),
+    /* inner ambient soft glow */
+    inset 0 0 36px 0 rgba(255, 255, 255, 0.22),
+    /* main large floating shadow — very soft and diffuse */
+    0 24px 70px -10px rgba(120, 150, 145, 0.22),
+    0 8px 28px -4px rgba(28, 27, 27, 0.07);
+
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  will-change: transform;
+}
+
+.frosted-glass-card:hover {
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(210, 235, 230, 0.35) 45%,
+      rgba(255, 255, 255, 0.68) 100%);
+  transform: translateY(-4px) scale(1.008);
+  box-shadow:
+    inset 0 3px 6px 0 rgba(255, 255, 255, 1),
+    inset 0 0 40px 0 rgba(255, 255, 255, 0.28),
+    0 32px 80px -12px rgba(120, 150, 145, 0.28),
+    0 12px 32px -4px rgba(28, 27, 27, 0.09);
+}
+
+/* Static Cards (No hover lift, scale, or color change) */
+.frosted-glass-card-static,
+.frosted-glass-card-static:hover,
+.frosted-glass-card-static:active,
+.frosted-glass-card-static:focus {
+  transform: none !important;
+  transition: none !important;
+  box-shadow:
+    inset 0 2.5px 5px 0 rgba(255, 255, 255, 0.92),
+    inset 0 0 36px 0 rgba(255, 255, 255, 0.22),
+    0 24px 70px -10px rgba(120, 150, 145, 0.22),
+    0 8px 28px -4px rgba(28, 27, 27, 0.07) !important;
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(210, 235, 230, 0.28) 45%,
+      rgba(255, 255, 255, 0.58) 100%) !important;
+  cursor: default !important;
+}
+
+/* ==================================================
+   CARD HOVER LIGHT-SWEEP (Targeted Sections Only)
+   Stationary card · Diagonal light reflection ↘ (Top-Left to Bottom-Right)
+   Theme colour: warm cream-amber matching #E05A2B / #FDF2EC palette
+   ================================================== */
+.card-light-sweep {
+  position: relative !important;
+  overflow: hidden !important;
+  transform: none !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card-light-sweep:hover,
+.card-light-sweep:active,
+.card-light-sweep:focus {
+  transform: none !important;
+}
+
+/* Light sweep reflection pseudo-element */
+.card-light-sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 55%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: linear-gradient(90deg,
+      rgba(255, 242, 220, 0) 0%,
+      rgba(255, 200, 120, 0.22) 30%,
+      rgba(255, 220, 160, 0.50) 50%,
+      rgba(255, 200, 120, 0.22) 70%,
+      rgba(255, 242, 220, 0) 100%);
+  filter: blur(4px);
+  transform: translate3d(-200%, 0, 0) rotate(28deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-light-sweep:hover::after {
+    animation: cardLightSweep 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+@keyframes cardLightSweep {
+  0% {
+    transform: translate3d(-200%, 0, 0) rotate(28deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(350%, 0, 0) rotate(28deg);
+    opacity: 0;
+  }
+}
+
+/* ==================================================
+   LOGO PRELOADER ANIMATION
+   1. Logo fades in big at center & scales down to normal
+   2. Logo moves left as text appears from right with fade in
+   Smooth, Slow & Premium
+   Total Duration: 3.8s · Easing: cubic-bezier(0.16, 1, 0.3, 1)
+   ================================================== */
+
+.preloader-overlay {
+  animation: preloaderSlideUp 3.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes preloaderSlideUp {
+
+  0%,
+  78% {
+    transform: translateY(0%);
+    visibility: visible;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  79% {
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.22);
+  }
+
+  100% {
+    transform: translateY(-100%);
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.22);
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Step 1: Logo fades in big (scale 1.8 -> 1.0) at dead center (0.0s - 1.15s) */
+.preloader-icon {
+  animation: preloaderLogoZoomIn 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes preloaderLogoZoomIn {
+  0% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Step 2: Logo moves left and text appears from right (1.15s - 2.2s) */
+.preloader-text-mask {
+  animation: preloaderTextUnfold 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes preloaderTextUnfold {
+
+  0%,
+  30% {
+    max-width: 0px;
+    opacity: 0;
+    margin-left: 0px;
+  }
+
+  58%,
+  100% {
+    max-width: 420px;
+    opacity: 1;
+    margin-left: 16px;
+  }
+}
+
+/* Text inner slides in from the right with smooth fade */
+.preloader-text-inner {
+  animation: preloaderTextSlideRight 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes preloaderTextSlideRight {
+
+  0%,
+  30% {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+
+  58%,
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* Glass Sub-Elements (Pills & Inner Actions) */
+.frosted-glass-sub {
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  backdrop-filter: blur(18px) saturate(130%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.92);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.78);
+  border-right: 1px solid rgba(255, 255, 255, 0.38);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1.5px 3px 0 rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 640px) {
+  .frosted-glass-card {
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+    backdrop-filter: blur(24px) saturate(140%);
+    border-radius: 20px;
+  }
+
+  .frosted-glass-card:hover {
+    transform: none;
+  }
+}
+
+/* ==================================================
+   PAGE TRANSITION — Warm Cream Curtain + Content Fade-Up
+   A premium diagonal curtain that sweeps across the screen
+   on every route change.
+   ================================================== */
+
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 8888;
+  pointer-events: none;
+
+  /* Curtain color matches the warm cream site background */
+  background: linear-gradient(135deg, #F4F0E8 0%, #EDE8DF 50%, #F7F4EE 100%);
+
+  /* Start fully hidden (translated off the bottom-left) */
+  transform: translateY(100%);
+  opacity: 1;
+  transition: none;
+}
+
+/* === COVERING: curtain slides UP to cover old page === */
+.page-curtain.covering {
+  transform: translateY(0%);
+  transition: transform 420ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* === REVEALING: curtain slides UP and off the top === */
+.page-curtain.revealing {
+  transform: translateY(-100%);
+  transition: transform 480ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* === IDLE: fully gone, no transition === */
+.page-curtain.idle {
+  transform: translateY(100%);
+  transition: none;
+}
+
+/* ---- Content fade-up ---- */
+.page-content {
+  transition: none;
+}
+
+.page-content.covering {
+  opacity: 0;
+}
+
+.page-content.revealing {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: pageContentFadeUp 520ms cubic-bezier(0.22, 1, 0.36, 1) 260ms forwards;
+}
+
+.page-content.idle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pageContentFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

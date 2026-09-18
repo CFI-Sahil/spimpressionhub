@@ -1,0 +1,17 @@
+# ==============================================================================
+# SP Impression Hub & Kripa Online Services - Robots.txt
+# Domain: https://spimpressionhub.com
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Host declaration
+Host: https://spimpressionhub.com
+
+# XML Sitemaps
+Sitemap: https://spimpressionhub.com/sitemap.xml
